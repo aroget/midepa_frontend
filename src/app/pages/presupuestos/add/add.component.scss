@@ -1,0 +1,42 @@
+@import '../../../../style/core/_colors';
+
+nav {
+  > * {
+    display: inline-block;
+  }
+  padding: 30px 0;
+  border-bottom: 1px solid #979797;
+}
+
+.service-row {
+  overflow: auto;
+  margin-bottom: 15px;
+}
+
+.add-service {
+  height: 60px;
+  padding: 20px;
+  background: #fafafa;
+
+  p {
+    margin: 0;
+    line-height: 1.1;
+    color: #5d5d5d;
+  }
+
+  span {
+    width: 25px;
+    height: 25px;
+    font-size: 1.4em;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 50%;
+    color: $color-white;
+    display: inline-block;
+    background-color: $color-brand;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,41 @@
+@import '../../../../style/core/_colors';
+@import '../../../../style/core/_typography';
+
+$dropdown-background: #dbf6f4;
+
+.md-dropdown {
+  height: 46px;
+  background: $dropdown-background;
+
+  button {
+    @include font-bold();
+
+    width: 100%;
+    border: none;
+    text-align: left;
+    border-radius: 0;
+    line-height: 2.4;
+    background: transparent;
+
+    &:focus {
+      background: $dropdown-background !important;
+    }
+  }
+
+  &__menu {
+    left: 15px !important;
+    border-radius: 0;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.10);
+  }
+
+  &__item {
+    color: #5d5d5d;
+    padding: 4px 8px;
+    transition: background 200ms ease-in;
+
+    &:hover {
+      cursor: pointer;
+      background: $color-light;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.md-breadcrumb {
+  padding: 0;
+  margin-bottom: 0;
+
+  li {
+    margin-right: 15px;
+    display: inline-block;
+    text-transform: capitalize;
+
+    &:after {
+      top: -1px;
+      right: -5px;
+      content: '-->';
+      position: relative;
+    }
+
+    &:last-child {
+      margin-right: none;
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

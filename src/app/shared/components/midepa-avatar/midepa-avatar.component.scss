@@ -1,0 +1,21 @@
+@import '../../../../style/core/_colors';
+
+.avatar {
+  margin: 2px;
+  border-radius: 50%;
+  display: inline-block;
+  background: $color-brand;
+
+  &.default {
+    width: 40px;
+    height: 40px;
+  }
+  &.large {
+    width: 50px;
+    height: 50px;
+  }
+  &.small {
+    width: 30px;
+    height: 30px;
+  }
+}

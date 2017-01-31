@@ -1,0 +1,6 @@
+<ol class="md-breadcrumb">
+  <li *ngFor="let page of data; let last = last">
+    <a [routerLink]="[ page.url ]" *ngIf="!last">{{ page.name }}</a>
+    <p class="link" *ngIf="last">{{ page.name }}</p>
+  </li>
+</ol>

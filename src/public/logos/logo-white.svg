@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="149px" height="40px" viewBox="0 0 149 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>2D304070-623C-4129-B602-3551921E7FA9</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Admin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="add-presupuesto+services---screen" transform="translate(-53.000000, -39.000000)">
+            <g id="Group-3" transform="translate(53.000000, 39.000000)">
+                <g id="Group-15">
+                    <g id="Group-2">
+                        <circle id="Oval-2" fill="#FFFFFF" cx="20" cy="20" r="20"></circle>
+                        <g id="noun_720520_cc" transform="translate(7.000000, 8.000000)" fill="#27B9AD">
+                            <g id="Group">
+                                <path d="M13.2818182,0 L0,8.80384615 L1.14545455,10.4730769 L3.81818182,8.69615385 L3.81818182,20.7846154 L23.0727273,20.7846154 L23.0727273,8.77692308 L25.6636364,10.4730769 L26.7818182,8.80384615 L13.2818182,0 Z M13.4181818,18.5769231 C10.4727273,18.5769231 8.07272727,16.2076923 8.07272727,13.3 C8.07272727,10.3923077 10.4727273,8.02307692 13.4181818,8.02307692 C16.3636364,8.02307692 18.7636364,10.3923077 18.7636364,13.3 C18.7636364,16.2076923 16.3636364,18.5769231 13.4181818,18.5769231 Z" id="Shape"></path>
+                                <path d="M16.2363636,11.482879 C16.2363636,11.482879 14.6,10.1098021 13.3727273,11.9944175 C12.1454545,10.1098021 10.5090909,11.482879 10.5090909,11.482879 C9.36363636,12.5059559 10.5090909,13.8790328 10.5090909,13.8790328 C10.9454545,14.632879 13.1,16.6521098 13.3727273,16.9213405 L13.3727273,16.9213405 L13.4,16.9482636 C13.5909091,16.7598021 15.8272727,14.6598021 16.2636364,13.9059559 C16.2363636,13.8790328 17.3818182,12.5059559 16.2363636,11.482879 Z" id="Shape"></path>
+                            </g>
+                        </g>
+                    </g>
+                    <text id="MIDEPA" font-family="Avenir-Black, Avenir" font-size="22" font-weight="700" letter-spacing="2" fill="#FFFFFF">
+                        <tspan x="51" y="28">MIDEP</tspan>
+                        <tspan x="132.698" y="28">A</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

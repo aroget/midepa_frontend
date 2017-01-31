@@ -1,0 +1,61 @@
+@import '../../../../style/core/_colors';
+
+.presupuestos {
+  margin-top: 25px;
+
+  &--empty {
+    padding: 60px 10px;
+    border: 1px solid #d7d7d7;
+
+    p {
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .heading {
+      margin-top: 5px;
+      font-size: 1.5em;
+      color: $color-brand;
+    }
+  }
+
+  &--filled {
+    ul {
+      padding: 0;
+      list-style: none;
+    }
+  }
+
+  .margin-bottom {
+    margin-bottom: 20px;
+  }
+
+  .months-list {
+    li {
+      font-size: 0.8em;
+      text-transform: uppercase;
+
+      span {
+        padding-bottom: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        span {
+          display: inline-block;
+          color: $color-brand;
+          border-bottom: 2px solid;
+        }
+      }
+    }
+  }
+
+  &__row-header {
+    height: 60px;
+    padding: 20px;
+    background-color: #f1f1f1;
+  }
+}

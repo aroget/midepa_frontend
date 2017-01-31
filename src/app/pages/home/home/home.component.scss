@@ -1,0 +1,16 @@
+@import '../../../../style/core/_colors';
+
+.navigation {
+  &__item {
+    height: 220px;
+    background: $color-brand;
+
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      padding-top: 90px;
+      color: $color-white;
+    }
+  }
+}

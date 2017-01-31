@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <md-page-header></md-page-header>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <p class="content__title">Presupuestos</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <md-dropdown [data]="[]"></md-dropdown>
+      </div>
+      <div class="col-xs-6 col-sm-2">
+        <md-dropdown [data]="months"></md-dropdown>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="presupuestos presupuestos--empty">
+          <p>No tienes ningun servicio agregado</p>
+          <p class="heading">
+            <a [routerLink]="['add']">agregar presupuesto para {{ currentMonth }}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="presupuestos presupuestos--filled">
+          <div class="row margin-bottom">
+            <div class="col-xs-12">
+              <ul class="text-center months-list">
+                <li
+                  class="col-xs-1"
+                  [class.active]="month.label.toLowerCase() === currentMonth.toLowerCase()"
+                  *ngFor="let month of months">
+                  <span>{{ month.label }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row margin-bottom">
+            <div class="col-xs-12">
+              <div class="presupuestos__row-header">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-3">
+                    <span>Tipo de servicio</span>
+                  </div>
+                  <div class="col-xs-12 col-sm-2">
+                    <span>Costo mensual</span>
+                  </div>
+                  <div class="col-xs-12 col-sm-2">
+                    <span>Nombre de empresa</span>
+                  </div>
+                  <div class="col-xs-12 col-sm-3">
+                    <span>Descripcion</span>
+                  </div>
+                  <div class="col-xs-12 col-sm-2">
+                    <span>Calificacion</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <ul>
+              <li class="col-xs-12 col-sm-3">
+                <p>Elevadores</p>
+              </li>
+              <li class="col-xs-12 col-sm-2">
+                <p>10,350MX</p>
+              </li>
+              <li class="col-xs-12 col-sm-2">
+                <p>OTIS</p>
+              </li>
+              <li class="col-xs-12 col-sm-3">
+                <p>Some content here</p>
+              </li>
+              <li class="col-xs-12 col-sm-2">
+                <p class="link">Ver calificacion</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

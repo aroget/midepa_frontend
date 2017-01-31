@@ -1,0 +1,19 @@
+<div class="md-dropdown">
+  <button
+    type="button"
+    aria-haspopup="true"
+    aria-expanded="true"
+    data-toggle="dropdown"
+    class="btn btn-default dropdown-toggle">
+    {{ data[0]?.label ? data[0].label : 'No Content'}}
+  </button>
+
+  <ul class="md-dropdown__menu dropdown-menu" aria-labelledby="dropdownMenu1" *ngIf="data.length">
+    <li
+      (click)="onChange(item)"
+      class="md-dropdown__item"
+      *ngFor="let item of data">
+      {{ item.label }}
+    </li>
+  </ul>
+</div>

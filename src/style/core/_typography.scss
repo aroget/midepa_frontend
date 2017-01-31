@@ -1,0 +1,35 @@
+body {
+  font-size: 150%;
+  line-height: 1.4;
+  font-weight: 400;
+  color: $color-dark;
+  font-family: 'Nunito', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-weight: 700;
+}
+
+a,
+.link {
+  color: $color-brand;
+  text-decoration: none;
+}
+
+@mixin font-thin() {
+  font-weight: 300;
+}
+
+@mixin font-normal() {
+  font-weight: 400;
+}
+
+@mixin font-bold() {
+  font-weight: 700;
+}
