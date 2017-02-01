@@ -7,8 +7,30 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MidepaStarsComponent implements OnInit {
   @Input() rating: number;
+  MAX_RATING = 5;
+  icon: string;
+  maxRatingIterable = [];
 
   constructor() { }
 
-  ngOnInit() { }
+  fillStars(number: number) {
+
+    if (this.rating > number) {
+      return {
+        'icon': 'star',
+        'class': 'filled'
+      };
+    } else if (this.rating <= number) {
+      return {
+        'icon': 'star_border',
+        'class': 'default'
+      };
+    }
+  }
+
+  ngOnInit() {
+    for (let i = 0; i <= this.MAX_RATING; i++) {
+      this.maxRatingIterable.push(this.fillStars(i));
+    }
+  }
 }

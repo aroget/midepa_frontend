@@ -1,12 +1,22 @@
 <div class="md-header">
   <div class="container-fluid">
-    <p class="row md-header__title">
-      Bienvenido <span>Salvador Zarate</span>
-    </p>
-
     <div class="row">
-      Calificacion: 3.4
-      <md-stars></md-stars>
+      <div class="col-xs-12 col-sm-6">
+        <div class="row">
+          <p class="col-xs-12 md-header__title">
+            Bienvenido <span>{{ data.name }}</span>
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="md-header__rating col-xs-12">
+            <p>Calificacion: {{ data.rating.toFixed(1) }}</p>
+            <div class="pull-right">
+              <md-stars [rating]="data.rating"></md-stars>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

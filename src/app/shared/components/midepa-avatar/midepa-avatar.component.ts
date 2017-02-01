@@ -21,6 +21,6 @@ export class MidepaAvatarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.avatar);
+    // console.log(this.avatar);
   }
 }

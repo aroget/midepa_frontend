@@ -1,3 +1,29 @@
+@import '../../../../style/core/_colors';
+@import '../../../../style/core/_typography';
+
 .md-header {
+  padding: 20px 0;
   margin-bottom: 60px;
+  border-bottom: 1px solid #ccc;
+
+  &__title {
+    @include font-bold();
+    font-size: 2.2em;
+    padding-bottom: 5px;
+
+    span {
+      border-bottom: 2px solid;
+    }
+  }
+
+  &__rating {
+    > * {
+      display: inline-block;
+    }
+
+    p {
+      font-size: 1.3em;
+      color: $color-brand;
+    }
+  }
 }

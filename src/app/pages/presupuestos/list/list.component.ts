@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MD_MONTHS } from '../../../shared/constants/months';
 import { currentMonth } from '../../../shared/utils/';
+import { IPageHeader } from '../../../shared/components';
+import { MD_MONTHS } from '../../../shared/constants/months';
 
 @Component({
   selector: 'md-presupuestos-list',
@@ -11,10 +12,15 @@ import { currentMonth } from '../../../shared/utils/';
 export class PresupuestosListComponent implements OnInit {
   months = MD_MONTHS;
   currentMonth: string;
+  pageHeader: IPageHeader;
 
   constructor() { }
 
   ngOnInit() {
+    this.pageHeader = {
+      name: 'Salvador Zarate',
+      rating: 4
+    };
     this.currentMonth = currentMonth;
   }
 }

@@ -15,5 +15,5 @@ export class MidepaPageHeaderComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {}
 }
