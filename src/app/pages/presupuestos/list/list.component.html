@@ -74,50 +74,50 @@
               <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
                   <div class="row">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-xs-12">
                       <span class="hidden-lg">Tipo de servicio:</span>
                     </div>
-                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
                       <p>{{ service.name }}</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
                   <div class="row">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-xs-12">
                       <span class="hidden-lg">Costo mensual:</span>
                     </div>
-                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
                       <p>{{ service.cost | currency:'MXN':true }}</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
                   <div class="row">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-xs-12">
                       <span class="hidden-lg">Nombre de empresa:</span>
                     </div>
-                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
                       <p>{{ service.company }}</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
                   <div class="row">
-                    <div class="col-xs-6 text-left">
+                    <div class="col-xs-12">
                       <span class="hidden-lg">Descripcion:</span>
                     </div>
-                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
                       <p>{{ service.description }}</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
                   <div class="row">
-                    <div class="col-xs-6 text-left">
-                      <span class="hidden-lg">here Calificacion:</span>
+                    <div class="col-xs-12">
+                      <span class="hidden-lg">Calificacion:</span>
                     </div>
-                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
                       <md-stars [rating]="service.rating" *ngIf="service.isOpen"></md-stars>
                       <p class="link" (click)="service.isOpen = !service.isOpen">
                         {{ service.isOpen ? 'Cerrar' : 'Ver calificacion' }}

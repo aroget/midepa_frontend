@@ -20,6 +20,10 @@ a,
 .link {
   color: $color-brand;
   text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .truncate {
