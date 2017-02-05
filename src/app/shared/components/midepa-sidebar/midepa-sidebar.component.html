@@ -1,4 +1,10 @@
 <div class="sidebar">
+  <span
+    (click)="toggelMenu()"
+    class="sidebar__mobile pull-left"
+    *ngIf="(isOpen | async)?.isOpen">
+    MENU
+  </span>
   <div class="sidebar__logo text-center">
     <a [routerLink]="['/']">
       <img src="/logos/logo-white.svg" alt="Midepa App">

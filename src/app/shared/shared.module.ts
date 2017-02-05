@@ -10,16 +10,15 @@ import {
   MidepaDropdownComponent,
   MidepaBreadCrumbComponent,
   MidepaPageHeaderComponent,
-  MidepaMobileMenuComponent
 } from './components';
 
 @NgModule({
   imports: [ RouterModule, BrowserModule ],
   declarations: [ MidepaSidebarComponent, MidepaTopBarComponent,
   MidepaAvatarComponent, MidepaPageHeaderComponent, MidepaStarsComponent,
-  MidepaDropdownComponent, MidepaBreadCrumbComponent, MidepaMobileMenuComponent ],
+  MidepaDropdownComponent, MidepaBreadCrumbComponent ],
   providers: [],
   exports: [ MidepaSidebarComponent, MidepaTopBarComponent, MidepaAvatarComponent,
-  MidepaPageHeaderComponent, MidepaStarsComponent, MidepaDropdownComponent, MidepaBreadCrumbComponent, MidepaMobileMenuComponent ]
+  MidepaPageHeaderComponent, MidepaStarsComponent, MidepaDropdownComponent, MidepaBreadCrumbComponent ]
 })
 export class SharedModule {}

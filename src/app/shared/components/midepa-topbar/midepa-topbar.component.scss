@@ -1,5 +1,6 @@
 @import '../../../../style/core/_colors';
 @import '../../../../style/core/_typography';
+@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
 
 .nav {
   height: 80px;
@@ -7,6 +8,14 @@
   text-align: right;
   margin-bottom: 10px;
   background: $color-light;
+
+  &__mobile {
+    margin-top: 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
   &__user {
     @include font-bold();
@@ -18,5 +27,11 @@
   }
   &__avatar {
     display: inline-block;
+  }
+
+  @media (min-width: $screen-md) {
+    &__mobile {
+      display: none;
+    }
   }
 }

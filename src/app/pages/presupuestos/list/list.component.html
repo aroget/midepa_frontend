@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" *ngIf="!services.length">
       <div class="col-xs-12 text-center">
         <div class="presupuestos presupuestos--empty">
           <p>No tienes ningun servicio agregado</p>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" *ngIf="services.length">
       <div class="col-xs-12 text-center">
         <div class="presupuestos presupuestos--filled">
           <div class="row margin-bottom">
@@ -70,7 +70,7 @@
           </div>
 
           <ul class="services_list">
-            <li class="col-xs-12">
+            <li class="col-xs-12" *ngFor="let service of services">
               <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
                   <div class="row">
@@ -78,7 +78,7 @@
                       <span class="hidden-lg">Tipo de servicio:</span>
                     </div>
                     <div class="col-xs-6 col-lg-offset-0 col-lg-12">
-                      <p>Elevadores</p>
+                      <p>{{ service.name }}</p>
                     </div>
                   </div>
                 </div>
@@ -88,7 +88,7 @@
                       <span class="hidden-lg">Costo mensual:</span>
                     </div>
                     <div class="col-xs-6 col-lg-offset-0 col-lg-12">
-                      <p>10,350MX</p>
+                      <p>{{ service.cost | currency:'MXN':true }}</p>
                     </div>
                   </div>
                 </div>
@@ -98,7 +98,7 @@
                       <span class="hidden-lg">Nombre de empresa:</span>
                     </div>
                     <div class="col-xs-6 col-lg-offset-0 col-lg-12">
-                      <p>OTIS</p>
+                      <p>{{ service.company }}</p>
                     </div>
                   </div>
                 </div>
@@ -108,7 +108,7 @@
                       <span class="hidden-lg">Descripcion:</span>
                     </div>
                     <div class="col-xs-6 col-lg-offset-0 col-lg-12">
-                      <p>Some content here</p>
+                      <p>{{ service.description }}</p>
                     </div>
                   </div>
                 </div>
@@ -118,7 +118,10 @@
                       <span class="hidden-lg">here Calificacion:</span>
                     </div>
                     <div class="col-xs-6 col-lg-offset-0 col-lg-12">
-                      <p class="link">Ver calificacion</p>
+                      <md-stars [rating]="service.rating" *ngIf="service.isOpen"></md-stars>
+                      <p class="link" (click)="service.isOpen = !service.isOpen">
+                        {{ service.isOpen ? 'Cerrar' : 'Ver calificacion' }}
+                      </p>
                     </div>
                   </div>
                 </div>

@@ -2,6 +2,9 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
+
+import { mobileReducer } from './config/reducers';
 
 import { AppComponent } from './app.component';
 
@@ -21,7 +24,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     SharedModule,
     FormsModule,
     PresupuestosModule,
-    routing
+    routing,
+    StoreModule.provideStore({ mobileReducer }),
   ],
   declarations: [
     AppComponent,

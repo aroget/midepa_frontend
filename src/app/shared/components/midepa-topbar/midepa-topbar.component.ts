@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 
+import { TOGGLE } from '../../../config/reducers';
 import { IAvatar, AVATAR_SIZE } from '../midepa-avatar';
 
 @Component({
@@ -10,11 +12,15 @@ import { IAvatar, AVATAR_SIZE } from '../midepa-avatar';
 export class MidepaTopBarComponent implements OnInit {
   avatar: IAvatar;
 
-  constructor() {
+  constructor(private store: Store<any>) {
     this.avatar = {
       type: AVATAR_SIZE.DEFAULT,
       image: 'URL'
     };
+  }
+
+  toggelMenu() {
+    this.store.dispatch({ type: TOGGLE });
   }
 
   ngOnInit() { }

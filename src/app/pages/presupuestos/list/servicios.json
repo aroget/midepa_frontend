@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Elevadores",
+    "cost": 10350,
+    "company": "OTIS",
+    "description": "Some Description",
+    "rating": 4
+  },
+  {
+    "name": "Jardineria",
+    "cost": 1100,
+    "company": "Jardiners Verdes",
+    "description": "Restablecer el jardin de nińos",
+    "rating": 5
+  },
+  {
+    "name": "Basura y Reciclaje",
+    "cost": 4000,
+    "company": "Gov. de la Ciudad De Mexico",
+    "description": "Some Description",
+    "rating": 3
+  }
+]

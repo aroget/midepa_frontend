@@ -4,6 +4,7 @@ import { currentMonth } from '../../../shared/utils/';
 import { IPageHeader } from '../../../shared/components';
 import { MD_MONTHS } from '../../../shared/constants/months';
 
+
 @Component({
   selector: 'md-presupuestos-list',
   templateUrl: './list.component.html',
@@ -12,6 +13,7 @@ import { MD_MONTHS } from '../../../shared/constants/months';
 export class PresupuestosListComponent implements OnInit {
   months = MD_MONTHS;
   currentMonth: string;
+  services = [];
   pageHeader: IPageHeader;
 
   constructor() { }
@@ -22,5 +24,7 @@ export class PresupuestosListComponent implements OnInit {
       rating: 4
     };
     this.currentMonth = currentMonth;
+
+    setTimeout(() => { this.services = require('./servicios.json'); }, 1500);
   }
 }
