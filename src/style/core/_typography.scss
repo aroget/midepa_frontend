@@ -22,6 +22,12 @@ a,
   text-decoration: none;
 }
 
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @mixin font-thin() {
   font-weight: 300;
 }

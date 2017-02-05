@@ -35,35 +35,33 @@
       <div class="col-xs-12 text-center">
         <div class="presupuestos presupuestos--filled">
           <div class="row margin-bottom">
-            <div class="col-xs-12">
-              <ul class="text-center months-list">
-                <li
-                  class="col-xs-1"
-                  [class.active]="month.label.toLowerCase() === currentMonth.toLowerCase()"
-                  *ngFor="let month of months">
-                  <span>{{ month.label }}</span>
-                </li>
-              </ul>
-            </div>
+            <ul class="text-center months-list col-xs-12">
+              <li
+                class="col-xs-3 col-lg-offset-0 col-lg-1"
+                [class.active]="month.label.toLowerCase() === currentMonth.toLowerCase()"
+                *ngFor="let month of months">
+                <span>{{ month.label }}</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="row margin-bottom">
+          <div class="row margin-bottom visible-lg-block">
             <div class="col-xs-12">
               <div class="presupuestos__row-header">
                 <div class="row">
-                  <div class="col-xs-12 col-sm-3">
+                  <div class="col-xs-12 col-sm-3 truncate">
                     <span>Tipo de servicio</span>
                   </div>
-                  <div class="col-xs-12 col-sm-2">
+                  <div class="col-xs-12 col-sm-2 truncate">
                     <span>Costo mensual</span>
                   </div>
-                  <div class="col-xs-12 col-sm-2">
+                  <div class="col-xs-12 col-sm-2 truncate">
                     <span>Nombre de empresa</span>
                   </div>
-                  <div class="col-xs-12 col-sm-3">
+                  <div class="col-xs-12 col-sm-3 truncate">
                     <span>Descripcion</span>
                   </div>
-                  <div class="col-xs-12 col-sm-2">
+                  <div class="col-xs-12 col-sm-2 truncate">
                     <span>Calificacion</span>
                   </div>
                 </div>
@@ -71,25 +69,62 @@
             </div>
           </div>
 
-          <div class="row">
-            <ul>
-              <li class="col-xs-12 col-sm-3">
-                <p>Elevadores</p>
-              </li>
-              <li class="col-xs-12 col-sm-2">
-                <p>10,350MX</p>
-              </li>
-              <li class="col-xs-12 col-sm-2">
-                <p>OTIS</p>
-              </li>
-              <li class="col-xs-12 col-sm-3">
-                <p>Some content here</p>
-              </li>
-              <li class="col-xs-12 col-sm-2">
-                <p class="link">Ver calificacion</p>
-              </li>
-            </ul>
-          </div>
+          <ul class="services_list">
+            <li class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
+                  <div class="row">
+                    <div class="col-xs-6 text-left">
+                      <span class="hidden-lg">Tipo de servicio:</span>
+                    </div>
+                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                      <p>Elevadores</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
+                  <div class="row">
+                    <div class="col-xs-6 text-left">
+                      <span class="hidden-lg">Costo mensual:</span>
+                    </div>
+                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                      <p>10,350MX</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
+                  <div class="row">
+                    <div class="col-xs-6 text-left">
+                      <span class="hidden-lg">Nombre de empresa:</span>
+                    </div>
+                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                      <p>OTIS</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
+                  <div class="row">
+                    <div class="col-xs-6 text-left">
+                      <span class="hidden-lg">Descripcion:</span>
+                    </div>
+                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                      <p>Some content here</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
+                  <div class="row">
+                    <div class="col-xs-6 text-left">
+                      <span class="hidden-lg">here Calificacion:</span>
+                    </div>
+                    <div class="col-xs-6 col-lg-offset-0 col-lg-12">
+                      <p class="link">Ver calificacion</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

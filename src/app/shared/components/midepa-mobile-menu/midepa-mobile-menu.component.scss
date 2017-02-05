@@ -1,0 +1,24 @@
+@import '../../../../style/core/_colors';
+
+.mobile {
+  height: 100%;
+  background: $color-medium;
+
+  &__logo {
+    top: 45px;
+    position: relative;
+  }
+
+  &__links {
+    padding: 0;
+    list-style: none;
+    margin-top: 120px;
+
+    li {
+      padding: 10px 20px;
+      a {
+        color: $color-white;
+      }
+    }
+  }
+}

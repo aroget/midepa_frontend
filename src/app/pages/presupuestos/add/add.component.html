@@ -1,12 +1,16 @@
 <div class="container-fluid">
-  <nav>
-    <md-breadcrumb [data]="breadcrumb"></md-breadcrumb>
-    <button
-      type="submit"
-      (click)="onSubmit(form.value)"
-      class="pull-right mdbtn mdbtn--primary">
-      Guardar
-    </button>
+  <nav class="row">
+    <div class="col-xs-8 col-sm-8">
+      <md-breadcrumb [data]="breadcrumb"></md-breadcrumb>
+    </div>
+    <div class="col-xs-4 col-sm-4">
+      <button
+        type="submit"
+        (click)="onSubmit(form.value)"
+        class="pull-right mdbtn mdbtn--primary">
+        Guardar
+      </button>
+    </div>
   </nav>
 
   <form [formGroup]="form">
@@ -24,8 +28,9 @@
             <div class="col-xs-12 col-sm-6">
               <input
                 type="number"
-                formControlName="apartments"
-                class="form-control">
+                placeholder="22"
+                class="form-control"
+                formControlName="apartments">
             </div>
           </div>
         </div>
@@ -36,6 +41,7 @@
               <input
                 type="number"
                 class="form-control"
+                placeholder="1,000MX"
                 formControlName="budget">
             </div>
           </div>
@@ -50,7 +56,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row hidden-xs hidden-sm hidden-md">
         <label class="col-xs-12 col-sm-4">Tipo de Servicio</label>
         <label class="col-xs-12 col-sm-2">Costo Mensual</label>
         <label class="col-xs-12 col-sm-2">Nombre de Empresa</label>
@@ -60,20 +66,20 @@
       <div class="row" formArrayName="services">
         <div *ngFor="let service of form.controls.services.controls; let i=index" class="service-row">
           <div [formGroupName]="i" class="form-group">
-            <div class="col-xs-12 col-sm-4">
-              <input type="text" formControlName="service" class="form-control">
+            <div class="col-xs-12 col-lg-4 col-sm-6">
+              <input type="text" formControlName="service" class="form-control" placeholder="Jardineria">
             </div>
 
-            <div class="col-xs-12 col-sm-2">
-              <input type="number" formControlName="costPerMonth" class="form-control">
+            <div class="col-xs-12 col-lg-2 col-sm-6">
+              <input type="number" formControlName="costPerMonth" class="form-control" placeholder="500MX">
             </div>
 
-            <div class="col-xs-12 col-sm-2">
-              <input type="text" formControlName="companyName" class="form-control">
+            <div class="col-xs-12 col-lg-2 col-sm-6">
+              <input type="text" formControlName="companyName" class="form-control" placeholder="ACME">
             </div>
 
-            <div class="col-xs-12 col-sm-4">
-              <textarea formControlName="description" class="form-control"></textarea>
+            <div class="col-xs-12 col-lg-4 col-sm-6">
+              <textarea formControlName="description" class="form-control" placeholder="Creación de nuevos espacios verdes"></textarea>
             </div>
           </div>
         </div>

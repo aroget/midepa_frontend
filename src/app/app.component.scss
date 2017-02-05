@@ -1,7 +1,5 @@
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
 $sidebar-width: 280px;
-
-// .midepa-topbar {
-// }
 
 .midepa-sidebar {
   top: 0;
@@ -9,8 +7,28 @@ $sidebar-width: 280px;
   height: 100%;
   position: fixed;
   width: $sidebar-width;
+
+  @media (max-width: $screen-md) {
+    display: none;
+  }
+}
+
+.midepa-mobile-menu {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  position: fixed;
+  width: $sidebar-width;
+  transform: translateX(-100%);
+  transition: transform 150ms ease-in-out;
 }
 
 .midepa-content {
+  padding-bottom: 15px;
   margin-left: $sidebar-width;
+
+   @media (max-width: $screen-md) {
+    margin-left: 0;
+  }
 }

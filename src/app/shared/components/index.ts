@@ -4,4 +4,5 @@ export * from './midepa-avatar';
 export * from './midepa-sidebar';
 export * from './midepa-dropdown';
 export * from './midepa-breadcrumb';
+export * from './midepa-mobile-menu';
 export * from './midepa-page-header';
