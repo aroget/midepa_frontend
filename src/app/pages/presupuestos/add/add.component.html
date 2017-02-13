@@ -1,44 +1,25 @@
 <div class="container-fluid">
-  <nav class="row">
-    <div class="col-xs-12 col-sm-8">
-      <md-breadcrumb [data]="breadcrumb"></md-breadcrumb>
-    </div>
-
-    <div class="col-xs-12 col-sm-4">
-      <button
-        type="submit"
-        (click)="onSubmit(form.value)"
-        class="mdbtn mdbtn--primary">
-        Guardar
-      </button>
-    </div>
-  </nav>
-
   <form [formGroup]="form">
-    <div class="row">
-      <div class="col-xs-12">
-        <p class="h1">Presupuesto Mensual</p>
-      </div>
-    </div>
-
     <div class="form-group">
       <div class="row">
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-sm-9">
           <div class="row">
-            <label class="col-xs-12 col-sm-6">Numero de Departamentos</label>
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-4">
+              <label>Selecciona el mes</label>
+              <select>
+                <option value=""></option>
+              </select>
+            </div>
+            <div class="col-xs-12 col-sm-4">
+              <label>Numero de Departamentos</label>
               <input
                 type="number"
                 placeholder="22"
                 class="form-control"
                 formControlName="apartments">
             </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-          <div class="row">
-            <label class="col-xs-12 col-sm-6">Presupuesto Total</label>
-            <div class="col-xs-12 col-sm-6">
+            <div class="col-xs-12 col-sm-4">
+              <label>Presupuesto Total</label>
               <input
                 type="number"
                 class="form-control"
@@ -46,6 +27,14 @@
                 formControlName="budget">
             </div>
           </div>
+        </div>
+        <div class="col-xs-12 col-sm-3">
+          <button
+            type="submit"
+            (click)="onSubmit(form.value)"
+            class="mdbtn mdbtn--primary">
+            Guardar
+          </button>
         </div>
       </div>
 
@@ -58,7 +47,8 @@
       </div>
 
       <div class="row hidden-xs hidden-sm hidden-md">
-        <label class="col-xs-12 col-sm-4">Tipo de Servicio</label>
+        <div class="col-xs-12 col-sm-1"></div>
+        <label class="col-xs-12 col-sm-3">Tipo de Servicio</label>
         <label class="col-xs-12 col-sm-2">Costo Mensual</label>
         <label class="col-xs-12 col-sm-2">Nombre de Empresa</label>
         <label class="col-xs-12 col-sm-4">Descripcion</label>
@@ -67,7 +57,8 @@
       <div class="row" formArrayName="services">
         <div *ngFor="let service of form.controls.services.controls; let i=index" class="service-row">
           <div [formGroupName]="i" class="form-group">
-            <div class="col-xs-12 col-lg-4 col-sm-6">
+            <div class="col-xs-12 col-sm-1 remove-service text-center"><span>-</span></div>
+            <div class="col-xs-12 col-lg-3 col-sm-5">
               <input type="text" formControlName="service" class="form-control" placeholder="Jardineria">
             </div>
 
