@@ -1,12 +1,12 @@
 <div class="container-fluid">
-  <div class="row">
+  <!--<div class="row">
     <div class="col-xs-12">
       <md-page-header [data]="pageHeader"></md-page-header>
     </div>
-  </div>
+  </div>-->
 
   <div class="content">
-    <div class="row">
+    <!--<div class="row">
       <div class="col-xs-12">
         <p class="content__title">Presupuestos</p>
       </div>
@@ -18,11 +18,17 @@
       <div class="col-xs-6 col-sm-2">
         <md-dropdown [data]="months"></md-dropdown>
       </div>
-    </div>
+    </div>-->
 
     <div class="row" *ngIf="!services.length">
-      <div class="col-xs-12 text-center">
-        <div class="presupuestos presupuestos--empty">
+      <div class="col-xs-12">
+        <div class="row">
+          <div class="col-xs-12">
+            <a class="add pull-right" [routerLink]="['add']">Agregar Presupuesto</a>
+          </div>
+        </div>
+        <div class="presupuestos presupuestos--empty text-center">
+          <p class="text-center">IMG</p>
           <p>No tienes ningun servicio agregado</p>
           <p class="heading">
             <a [routerLink]="['add']">agregar presupuesto para {{ currentMonth }}</a>

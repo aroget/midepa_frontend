@@ -25,6 +25,6 @@ export class PresupuestosListComponent implements OnInit {
     };
     this.currentMonth = currentMonth;
 
-    setTimeout(() => { this.services = require('./servicios.json'); }, 1500);
+    // setTimeout(() => { this.services = require('./servicios.json'); }, 1500);
   }
 }

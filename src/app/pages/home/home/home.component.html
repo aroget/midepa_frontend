@@ -5,19 +5,50 @@
     </div>
   </div>
 
-  <div class="row navigation">
-    <div class="col-xs-12 col-md-4">
-      <div class="text-center navigation__item">
-        <a [routerLink]="['/presupuestos/add']">
-          Agregar<br>Presupuestos
-        </a>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 overview">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 overview__presupuesto">
+          <div class="row">
+            <div class="col-xs-4 overview__logo text-center">IMG</div>
+            <div class="col-xs-8 overview__breakdown">
+              <p class="title">Presupuestos Creados</p>
+              <p class="amount">0</p>
+              <p class="type">Presupuesto</p>
+              <a [routerLink]="['/presupuestos/add']">Agregar Presupuesto</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 overview__inquilino">
+          <div class="row">
+            <div class="col-xs-4 overview__logo text-center">IMG</div>
+            <div class="col-xs-8 overview__breakdown">
+              <p class="title">Inquilinos Creados</p>
+              <p class="amount">0</p>
+              <p class="type">Inquilinos</p>
+              <a [routerLink]="['/presupuestos/add']">Agregar Inquilinos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row presupuestos">
+        <div class="col-xs-12">
+          <p class="presupuestos__title">Ultimos presupuestos agregados</p>
+          <div class="presupuestos__no-content text-center">
+            <p>No Tienes Ningun Presupuesto Agregado</p>
+            <a [routerLink]="['/presupuestos/add']">Agregar tu primer presupuesto</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-xs-12 col-md-4">
-      <div class="text-center navigation__item">
-        <a [routerLink]="['/inquilinos/add']">
-          Agregar<br>Inquilinos
-        </a>
+
+    <div class="col-xs-12 col-sm-4 calificacion">
+      <p class="calificacion__title">Ultimas calificaciones</p>
+
+      <div class="calificacion__no-content text-center">
+        <p>No tienes ninguna calificacion</p>
+        <a [routerLink]="['/presupuestos/add']">Nececitas agregar servicios primer</a>
       </div>
     </div>
   </div>
