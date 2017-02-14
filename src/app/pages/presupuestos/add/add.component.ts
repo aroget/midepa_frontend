@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 import { IBreadCrumb } from '../../../shared/components';
 import { currentMonth } from '../../../shared/utils/';
+import { MD_MONTHS } from '../../../shared/constants/months';
 
 @Component({
   selector: 'md-presupuestos-add',
@@ -12,6 +13,7 @@ import { currentMonth } from '../../../shared/utils/';
 export class PresupuestosAddComponent implements OnInit {
   form: FormGroup;
   currentMonth: string;
+  months = MD_MONTHS;
   breadcrumb: IBreadCrumb[];
 
   constructor(
@@ -38,6 +40,11 @@ export class PresupuestosAddComponent implements OnInit {
   addService() {
     const control = <FormArray>this.form.controls['services'];
     control.push(this.createServiceControl());
+  }
+
+  removeService(index) {
+    const control = <FormArray>this.form.controls['services'];
+    control.removeAt(index);
   }
 
   onSubmit(data) {

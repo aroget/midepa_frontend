@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <div class="col-xs-12 col-sm-8 overview margin-top">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 overview__presupuesto">
+        <div class="row">
+          <div class="col-xs-4 overview__logo text-center">IMG</div>
+          <div class="col-xs-8 overview__breakdown">
+            <p class="title">Numero de Departamentos</p>
+            <p class="amount">0</p>
+            <p class="type">Departamentos</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 overview__inquilino">
+        <div class="row">
+          <div class="col-xs-4 overview__logo text-center">IMG</div>
+          <div class="col-xs-8 overview__breakdown">
+            <p class="title">Presupuesto Total Mensual</p>
+            <p class="amount">0</p>
+            <p class="type">Pesos Mexicanos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-sm-4 margin-top">
+    <a [routerLink]="['edit']" class="mdbtn mdbtn--primary pull-right">Modificar Presupuesto</a>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="presupuestos">
+        <li class="presupuestos__header">
+          <div class="col-xs-2 truncate">Tipo de Servicio</div>
+          <div class="col-xs-2 truncate">Costo Mensual</div>
+          <div class="col-xs-2 truncate">Numero de Empresas</div>
+          <div class="col-xs-3 truncate">Descripcion</div>
+          <div class="col-xs-3 truncate">Calificacion</div>
+        </li>
+        <li *ngFor="let servicio of servicios">
+          <div class="col-xs-2 truncate">{{ servicio.name }}</div>
+          <div class="col-xs-2 truncate">{{ servicio.cost | currency:'MXN':true }}</div>
+          <div class="col-xs-2 truncate">{{ servicio.company }}</div>
+          <div class="col-xs-3 truncate">{{ servicio.description }}</div>
+          <div class="col-xs-3 truncate"><md-stars [rating]="servicio.rating"></md-stars></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

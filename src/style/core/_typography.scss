@@ -20,6 +20,7 @@ strong {
 a,
 .link {
   color: $color-brand;
+  display: inline-block;
   text-decoration: none;
 
   &:hover {

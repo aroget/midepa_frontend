@@ -1,11 +1,15 @@
 .mdbtn {
-  height: 47px;
+  display: block;
   border: none;
-  padding: 15px;
-  font-size: 13px;
-  font-weight: 600;
-  min-width: 150px;
-  border-radius: 2px;
+  max-width: 160px;
+  margin-top: 15px;
+  font-size: 1em;
+  padding: 8px 20px;
+  text-align: center;
+  border-radius: 18px;
+  color: $color-white;
+  margin-bottom: 40px;
+  background: $color-brand;
   transition: background 200ms ease-in-out;
 
   &--primary {

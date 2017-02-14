@@ -1,12 +1,14 @@
 <div class="container-fluid">
   <div class="content">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="add pull-right" [routerLink]="['add']">Agregar Presupuesto</a>
+        </div>
+      </div>
+    </div>
     <div class="row" *ngIf="!services.length">
       <div class="col-xs-12">
-        <div class="row">
-          <div class="col-xs-12">
-            <a class="add pull-right" [routerLink]="['add']">Agregar Presupuesto</a>
-          </div>
-        </div>
         <div class="presupuestos presupuestos--empty text-center">
           <p class="text-center">IMG</p>
           <p>No tienes ningun servicio agregado</p>
@@ -19,101 +21,76 @@
 
     <div class="row" *ngIf="services.length">
       <div class="col-xs-12 text-center">
-        <div class="presupuestos presupuestos--filled">
-          <div class="row margin-bottom">
-            <ul class="text-center months-list col-xs-12">
-              <li
-                class="col-xs-3 col-lg-offset-0 col-lg-1"
-                [class.active]="month.label.toLowerCase() === currentMonth.toLowerCase()"
-                *ngFor="let month of months">
-                <span>{{ month.label }}</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="row margin-bottom visible-lg-block">
-            <div class="col-xs-12">
-              <div class="presupuestos__row-header">
-                <div class="row">
-                  <div class="col-xs-12 col-sm-3 truncate">
-                    <span>Tipo de servicio</span>
-                  </div>
-                  <div class="col-xs-12 col-sm-2 truncate">
-                    <span>Costo mensual</span>
-                  </div>
-                  <div class="col-xs-12 col-sm-2 truncate">
-                    <span>Nombre de empresa</span>
-                  </div>
-                  <div class="col-xs-12 col-sm-3 truncate">
-                    <span>Descripcion</span>
-                  </div>
-                  <div class="col-xs-12 col-sm-2 truncate">
-                    <span>Calificacion</span>
+        <div class="border">
+          <div class="presupuestos presupuestos--filled">
+            <div class="row visible-lg-block">
+              <div class="col-xs-12">
+                <div class="presupuestos__row-header">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-3 truncate">
+                      <span>Mes</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 truncate">
+                      <span>Numero De Apartamentos</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 truncate">
+                      <span>Presupuesto Total</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 truncate">
+                      <span>Acciones</span>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <ul class="services_list">
-            <li class="col-xs-12" *ngFor="let service of services">
-              <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <span class="hidden-lg">Tipo de servicio:</span>
+            <ul class="services_list">
+              <li class="col-xs-12" *ngFor="let service of services">
+                <div class="row">
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Mes:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <p>{{ service.name }}</p>
+                      </div>
                     </div>
-                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
-                      <p>{{ service.name }}</p>
+                  </div>
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Numero De Apartamentos:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <p>{{ service.cost | currency:'MXN':true }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Presupuesto Total:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <p>{{ service.company }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Acciones:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <a [routerLink]="[service.id]">Ver mas detalles</a>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <span class="hidden-lg">Costo mensual:</span>
-                    </div>
-                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
-                      <p>{{ service.cost | currency:'MXN':true }}</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <span class="hidden-lg">Nombre de empresa:</span>
-                    </div>
-                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
-                      <p>{{ service.company }}</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <span class="hidden-lg">Descripcion:</span>
-                    </div>
-                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
-                      <p>{{ service.description }}</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
-                  <div class="row">
-                    <div class="col-xs-12">
-                      <span class="hidden-lg">Calificacion:</span>
-                    </div>
-                    <div class="col-xs-12 col-lg-offset-0 col-lg-12">
-                      <md-stars [rating]="service.rating" *ngIf="service.isOpen"></md-stars>
-                      <p class="link" (click)="service.isOpen = !service.isOpen">
-                        {{ service.isOpen ? 'Cerrar' : 'Ver calificacion' }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

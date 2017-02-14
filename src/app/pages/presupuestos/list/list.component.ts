@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { currentMonth } from '../../../shared/utils/';
 import { IPageHeader } from '../../../shared/components';
-import { MD_MONTHS } from '../../../shared/constants/months';
 
 
 @Component({
@@ -11,7 +10,6 @@ import { MD_MONTHS } from '../../../shared/constants/months';
   styleUrls: ['./list.component.scss']
 })
 export class PresupuestosListComponent implements OnInit {
-  months = MD_MONTHS;
   currentMonth: string;
   services = [];
   pageHeader: IPageHeader;
@@ -25,6 +23,6 @@ export class PresupuestosListComponent implements OnInit {
     };
     this.currentMonth = currentMonth;
 
-    // setTimeout(() => { this.services = require('./servicios.json'); }, 1500);
+    setTimeout(() => { this.services = require('./servicios.json'); }, 1500);
   }
 }
