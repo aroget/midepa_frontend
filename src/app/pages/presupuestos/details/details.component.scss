@@ -1,4 +1,5 @@
 @import '../../../../style/core/_colors';
+@import '../../../../style/core/_buttons';
 @import '../../../../style/core/_typography';
 
 :host {
@@ -9,6 +10,11 @@ $boder_color: #d8dde0;
 
 .margin-top {
   margin-top: 40px;
+}
+
+.mdbtn {
+  max-width: 200px;
+  font-size: 0.8em;
 }
 
 .overview {

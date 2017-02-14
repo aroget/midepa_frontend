@@ -1,6 +1,8 @@
 @import '../../../../style/core/_colors';
 @import '../../../../style/core/_typography';
 @import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+@import '../../../../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
+
 
 .nav {
   height: 80px;
@@ -10,10 +12,12 @@
   background: $color-light;
 
   &__mobile {
-    margin-top: 15px;
 
     &:hover {
       cursor: pointer;
+    }
+    &:focus {
+      outline: none;
     }
   }
 

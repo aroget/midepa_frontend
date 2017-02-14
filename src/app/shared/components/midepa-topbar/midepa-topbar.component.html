@@ -1,6 +1,14 @@
 <div class="nav">
   <div class="container-fluid">
-    <span class="nav__mobile pull-left" (click)="toggelMenu()">MENU</span>
+    <button
+      [class.is-active]="(isOpen | async)?.isOpen"
+      type="button"
+      (click)="toggelMenu()"
+      class="hamburger hamburger--collapse nav__mobile pull-left">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </button>
     <p class="nav__user">Salvador Zarate</p>
     <md-avatar class="nav__avatar" [avatar]="avatar"></md-avatar>
   </div>

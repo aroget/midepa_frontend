@@ -1,18 +1,12 @@
 <div class="sidebar">
-  <span
-    (click)="toggelMenu()"
-    class="sidebar__mobile pull-left"
-    *ngIf="(isOpen | async)?.isOpen">
-    MENU
-  </span>
   <div class="sidebar__logo text-center">
-    <a [routerLink]="['/']">
+    <a [routerLink]="['/']" (click)="toggelMenu()">
       <img src="/logos/logo-white.svg" alt="Midepa App">
     </a>
   </div>
 
   <ul class="sidebar__links">
-    <li><a [routerLink]="['/presupuestos']">Presupuestos</a></li>
-    <li><a [routerLink]="['/inquilinos']">Inquilinos</a></li>
+    <li (click)="toggelMenu()"><a [routerLink]="['/presupuestos']">Presupuestos</a></li>
+    <li (click)="toggelMenu()"><a [routerLink]="['/']">Inquilinos</a></li>
   </ul>
 </div>

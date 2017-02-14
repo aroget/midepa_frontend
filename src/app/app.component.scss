@@ -1,4 +1,5 @@
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+
 $sidebar-width: 280px;
 
 .midepa-sidebar {
@@ -15,6 +16,7 @@ $sidebar-width: 280px;
   }
 
   @media (max-width: $screen-md) {
+    top: 80px;
     transform: translateX(-100%);
   }
 }
