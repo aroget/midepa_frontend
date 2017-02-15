@@ -5,6 +5,8 @@ import { IBreadCrumb } from '../../../shared/components';
 import { currentMonth } from '../../../shared/utils/';
 import { MD_MONTHS } from '../../../shared/constants/months';
 
+import { PresupuesotsService } from '../presupuestos.service';
+
 @Component({
   selector: 'md-presupuestos-add',
   templateUrl: './add.component.html',
@@ -18,9 +20,11 @@ export class PresupuestosAddComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private service: PresupuesotsService
   ) {
     this.form = this.fb.group({
       'apartments': ['', Validators.required],
+      'month': ['', Validators.required],
       'budget': ['', Validators.required],
       'services': this.fb.array([
         this.createServiceControl()
@@ -48,8 +52,32 @@ export class PresupuestosAddComponent implements OnInit {
   }
 
   onSubmit(data) {
-    console.log('valid', this.form.valid);
-    console.log(data);
+    const presupuesto = {
+      month: data.month,
+      budget: data.budget,
+      apts: data.apartments
+    };
+
+    this
+      .service
+      .createPresupuesto(presupuesto)
+      .switchMap((pres: any) => {
+        const services = [];
+
+        data.services.forEach(service => {
+          const servicio = {
+            presupuesto: pres.id,
+            description: service.description,
+            company: service.companyName,
+            cost: service.costPerMonth,
+            name: service.service
+          };
+          services.push(servicio);
+        });
+
+        return this.service.createService(services);
+      })
+      .subscribe(res => console.log(res));
   }
 
   ngOnInit() {

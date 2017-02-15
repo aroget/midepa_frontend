@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <div class="row" formArrayName="inquilinos">
+        <div class="col-xs-12 col-sm-3 pull-right">
+          <button
+            type="submit"
+            (click)="onSubmit(form.value)"
+            class="mdbtn mdbtn--primary">
+            Guardar
+          </button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <p class="h2">Servicios</p>
+        </div>
+      </div>
+
+      <div class="row hidden-xs hidden-sm hidden-md">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-11">
+          <div class="row">
+            <label class="col-xs-12 col-lg-3 truncate">Nombre Completo</label>
+            <label class="col-xs-12 col-lg-3 truncate">Numero de Condominio</label>
+            <label class="col-xs-12 col-lg-3 truncate">Email</label>
+            <label class="col-xs-12 col-lg-3 truncate">Telefono</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" formArrayName="inquilinos">
+        <div *ngFor="let inquilino of form.controls.inquilinos.controls; let i=index" class="inquilino-row">
+          <div [formGroupName]="i" class="form-group">
+            <div class="__row">
+              <div
+                (click)="removeInquilino(i)"
+                class="col-xs-1 remove-inquilino text-center">
+                <span>-</span>
+              </div>
+              <div class="col-xs-11">
+                <div class="row">
+                  <div class="col-xs-12 col-lg-3 col-sm-3">
+                    <input type="text" formControlName="name" placeholder="Juan Andrade" class="form-control">
+                  </div>
+
+                  <div class="col-xs-12 col-lg-3 col-sm-3">
+                    <input
+                      type="text"
+                      placeholder="22A"
+                      class="form-control"
+                      formControlName="apt">
+                  </div>
+
+                  <div class="col-xs-12 col-lg-3 col-sm-3">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="juan@andrade.com"
+                      formControlName="email">
+                  </div>
+
+                  <div class="col-xs-12 col-lg-3 col-sm-3">
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="+1 555 444 3322"
+                      formControlName="phone">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12" (click)="addInquilino()">
+          <div class="add-inquilino">
+            <p><span>+</span> Agregar nuevo inquilino</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </form>
+</div>

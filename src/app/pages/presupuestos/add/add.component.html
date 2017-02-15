@@ -6,9 +6,9 @@
           <div class="row">
             <div class="col-xs-12 col-sm-4">
               <label class="truncate">Selecciona el mes</label>
-              <select>
+              <select formControlName="month">
                 <option value="">---</option>
-                <option [value]="month.id" *ngFor="let month of months">{{ month.label }}</option>
+                <option [value]="month.label" *ngFor="let month of months">{{ month.label }}</option>
               </select>
             </div>
             <div class="col-xs-12 col-sm-4">

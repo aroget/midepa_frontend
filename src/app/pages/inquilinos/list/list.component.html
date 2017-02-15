@@ -1,0 +1,111 @@
+<div class="container-fluid">
+  <div class="content">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="add pull-right" [routerLink]="['add']">Agregar Inquilino</a>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="!inquilinos.length">
+      <div class="col-xs-12">
+        <div class="inquilinos inquilinos--empty text-center">
+          <p class="text-center">IMG</p>
+          <p>No hay ningun inquilino agregado</p>
+          <p class="heading">
+            <a [routerLink]="['add']">agregar inquilino</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="inquilinos.length">
+      <div class="col-xs-12 text-center">
+        <div class="border">
+          <div class="inquilinos inquilinos--filled">
+            <div class="row visible-lg-block">
+              <div class="col-xs-12">
+                <div class="inquilinos__row-header">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-3 truncate">
+                      <span>Nombre Completo</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 truncate">
+                      <span>Numero de Condominio</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 truncate">
+                      <span>Email</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 truncate">
+                      <span>Telfono</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-2 truncate">
+                      <span>Ver mas detalles</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <ul class="inquilinos_list">
+              <li class="col-xs-12" *ngFor="let inquilino of inquilinos">
+                <div class="row">
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Nombre Completo:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <p>{{ inquilino.name }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Numero de Condominio:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <p>{{ inquilino.apt }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-3">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Email:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <p>{{ inquilino.email }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Telefonoe:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <p>{{ inquilino.phone }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
+                    <div class="row">
+                      <div class="col-xs-12">
+                        <span class="hidden-lg">Telefonoe:</span>
+                      </div>
+                      <div class="col-xs-12 col-lg-offset-0 col-lg-12">
+                        <a [routerLink]="[inquilino.id]">Ver mas detalles</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

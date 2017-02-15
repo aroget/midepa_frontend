@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 
 import { HomeModule } from './pages/home/home.module';
 import { SharedModule } from './shared/shared.module';
+
+import { InquilinosModule } from './pages/inquilinos/inquilinos.module';
 import { PresupuestosModule } from './pages/presupuestos/presupuestos.module';
 
 import { routing } from './app.routing';
@@ -23,6 +25,7 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     HttpModule,
     SharedModule,
     FormsModule,
+    InquilinosModule,
     PresupuestosModule,
     routing,
     StoreModule.provideStore({ mobileReducer }),
