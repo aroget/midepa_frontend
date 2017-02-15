@@ -1,6 +1,7 @@
 @import '../../../../style/core/_colors';
 @import '../../../../style/core/_buttons';
 @import '../../../../style/core/_typography';
+@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
 
 :host {
   height: 100%;
@@ -31,6 +32,16 @@ $boder_color: #d8dde0;
       background: $boder_color;
     }
   }
+
+    &__inquilino > *,
+    &__presupuesto > *,
+    .overview__logo > *,
+    .overview__breakdown > * {
+      @media all and (max-width: $screen-md) {
+        margin: 10px auto;
+        text-align: center;
+      }
+    }
 
   &__inquilino,
   &__presupuesto {

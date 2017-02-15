@@ -10,7 +10,9 @@
     <div class="row" *ngIf="!services.length">
       <div class="col-xs-12">
         <div class="presupuestos presupuestos--empty text-center">
-          <p class="text-center">IMG</p>
+          <p class="text-center">
+            <img src="/logos/presupuesto.svg" alt="">
+          </p>
           <p>No tienes ningun servicio agregado</p>
           <p class="heading">
             <a [routerLink]="['add']">agregar presupuesto para {{ currentMonth }}</a>

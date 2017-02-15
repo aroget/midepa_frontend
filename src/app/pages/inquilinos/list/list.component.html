@@ -10,7 +10,9 @@
     <div class="row" *ngIf="!inquilinos.length">
       <div class="col-xs-12">
         <div class="inquilinos inquilinos--empty text-center">
-          <p class="text-center">IMG</p>
+          <p class="text-center">
+            <img src="/logos/inquilinos.svg" alt="">
+          </p>
           <p>No hay ningun inquilino agregado</p>
           <p class="heading">
             <a [routerLink]="['add']">agregar inquilino</a>

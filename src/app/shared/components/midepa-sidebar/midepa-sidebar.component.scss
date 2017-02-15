@@ -4,6 +4,13 @@
   height: 100%;
   background: $color-brand;
 
+  .icon {
+    width: 30px;
+    height: 25px;
+    vertical-align: -4px;
+    display: inline-block;
+  }
+
   &__logo {
     top: 45px;
     position: relative;

@@ -1,5 +1,6 @@
 @import '../../../../style/core/_colors';
 @import '../../../../style/core/_typography';
+@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
 
 :host {
   height: 100%;
@@ -18,6 +19,10 @@ $boder_color: #d8dde0;
     height: 120%;
     position: absolute;
     background: $boder_color;
+
+    @media all and (max-width: $screen-md) {
+      content: none;
+    }
   }
 
   &__presupuesto {
@@ -29,6 +34,20 @@ $boder_color: #d8dde0;
       height: 80px;
       position: absolute;
       background: $boder_color;
+
+      @media all and (max-width: $screen-md) {
+        content: none;
+      }
+    }
+  }
+
+  &__inquilino > *,
+  &__presupuesto > *,
+  .overview__logo > *,
+  .overview__breakdown > *, {
+    @media all and (max-width: $screen-md) {
+      margin: 10px auto;
+      text-align: center;
     }
   }
 
@@ -73,6 +92,10 @@ $boder_color: #d8dde0;
   }
 
   .presupuestos {
+
+    @media all and (max-width: $screen-md) {
+     padding-bottom: 60px;
+    }
 
     &__title {
       @include font-bold();
@@ -119,3 +142,4 @@ $boder_color: #d8dde0;
     }
   }
 }
+

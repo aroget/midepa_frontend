@@ -6,7 +6,17 @@
   </div>
 
   <ul class="sidebar__links">
-    <li (click)="toggelMenu()"><a [routerLink]="['/presupuestos']">Presupuestos</a></li>
-    <li (click)="toggelMenu()"><a [routerLink]="['/inquilinos']">Inquilinos</a></li>
+    <li (click)="toggelMenu()">
+      <a [routerLink]="['/presupuestos']">
+        <span class="icon"><img class="img-responsive" src="logos/presupuesto-white.svg"></span>
+        Presupuestos
+      </a>
+    </li>
+    <li (click)="toggelMenu()">
+      <a [routerLink]="['/inquilinos']">
+        <span class="icon"><img class="img-responsive" src="logos/inquilinos-white.svg"></span>
+        Inquilinos
+      </a>
+    </li>
   </ul>
 </div>
