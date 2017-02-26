@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="isReady">
   <div class="col-xs-12 col-sm-8 overview margin-top">
     <div class="row">
       <div class="col-xs-12 col-sm-6 overview__presupuesto">
@@ -8,7 +8,7 @@
           </div>
           <div class="col-xs-12 col-sm-8 overview__breakdown">
             <p class="title">Numero de Departamentos</p>
-            <p class="amount">0</p>
+            <p class="amount">{{ presupuesto.apartments }}</p>
             <p class="type">Departamentos</p>
           </div>
         </div>
@@ -20,7 +20,7 @@
           </div>
           <div class="col-xs-12 col-sm-8 overview__breakdown">
             <p class="title">Presupuesto Total Mensual</p>
-            <p class="amount">0</p>
+            <p class="amount">{{ presupuesto.budget | currency:'MXN':true }}</p>
             <p class="type">Pesos Mexicanos</p>
           </div>
         </div>
@@ -42,10 +42,10 @@
           <div class="col-xs-3 truncate">Descripcion</div>
           <div class="col-xs-3 truncate">Calificacion</div>
         </li>
-        <li *ngFor="let servicio of servicios">
+        <li *ngFor="let servicio of presupuesto.servicios">
           <div class="col-xs-2 truncate">{{ servicio.name }}</div>
-          <div class="col-xs-2 truncate">{{ servicio.cost | currency:'MXN':true }}</div>
-          <div class="col-xs-2 truncate">{{ servicio.company }}</div>
+          <div class="col-xs-2 truncate">{{ servicio.price | currency:'MXN':true }}</div>
+          <div class="col-xs-2 truncate">{{ servicio.company_name }}</div>
           <div class="col-xs-3 truncate">{{ servicio.description }}</div>
           <div class="col-xs-3 truncate"><md-stars [rating]="servicio.rating"></md-stars></div>
         </li>

@@ -1,0 +1,80 @@
+@import '../../../../style/core/_colors';
+@import '../../../../style/core/_forms';
+@import '../../../../style/core/_buttons';
+@import '../../../../style/core/_typography';
+@import '../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+
+button.mdbtn--primary {
+  float: right;
+  margin-top: 20px;
+
+  @media all and (max-width: $screen-sm) {
+    float: left;
+  }
+}
+
+form {
+  margin-top: 40px;
+
+  label {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+  }
+}
+
+.service-row {
+  overflow: auto;
+  margin-bottom: 15px;
+}
+
+.h2 {
+  @include font-bold();
+
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.remove-service {
+  margin-top: 11px;
+  line-height: 1.15;
+
+  span {
+    width: 25px;
+    height: 25px;
+    font-size: 1.4em;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 50%;
+    color: $color-white;
+    display: inline-block;
+    background-color: #b2b2b2;
+  }
+}
+
+.add-service {
+  height: 60px;
+  padding: 20px;
+  background: #fafafa;
+
+  p {
+    margin: 0;
+    line-height: 1.1;
+    color: #5d5d5d;
+  }
+
+  span {
+    width: 25px;
+    height: 25px;
+    font-size: 1.4em;
+    text-align: center;
+    margin-right: 10px;
+    border-radius: 50%;
+    color: $color-white;
+    display: inline-block;
+    background-color: $color-brand;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { currentMonth } from '../../../shared/utils/';
 import { IPageHeader } from '../../../shared/components';
+import { PresupuesotsService } from '../presupuestos.service';
 
 
 @Component({
@@ -14,7 +15,11 @@ export class PresupuestosListComponent implements OnInit {
   services = [];
   pageHeader: IPageHeader;
 
-  constructor() { }
+  constructor(
+    private service: PresupuesotsService
+  ) {
+    this.service.getPresupuestos().subscribe(res => { this.services = res; });
+  }
 
   ngOnInit() {
     this.pageHeader = {
@@ -22,7 +27,5 @@ export class PresupuestosListComponent implements OnInit {
       rating: 4
     };
     this.currentMonth = currentMonth;
-
-    setTimeout(() => { this.services = require('./servicios.json'); }, 1500);
   }
 }

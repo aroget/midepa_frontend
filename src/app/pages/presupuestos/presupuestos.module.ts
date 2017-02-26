@@ -9,10 +9,12 @@ import { PresupuesotsService } from './presupuestos.service';
 
 import { PresupuestosAddComponent } from './add';
 import { PresupuestosListComponent } from './list';
+import { PresupuestosEditComponent } from './edit';
 import { PresupuestosDetailsComponent } from './details';
 
 @NgModule({
-  declarations: [ PresupuestosAddComponent, PresupuestosListComponent, PresupuestosDetailsComponent ],
+  declarations: [ PresupuestosAddComponent, PresupuestosListComponent, PresupuestosDetailsComponent,
+  PresupuestosEditComponent ],
   imports: [ BrowserModule, SharedModule, PresupuestosRoutesModule, ReactiveFormsModule ],
   providers: [ PresupuesotsService ],
   bootstrap: [  ]

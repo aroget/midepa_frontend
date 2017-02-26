@@ -10,13 +10,16 @@ const END_POINTS = {
 const VERSION = 'v1';
 
 const RESOURCES = {
-  'PROFILE': 'profile',
+  'PROFILE': 'me',
+  'REGISTER': 'register',
+  'SERVICIO': 'servicio',
   'SERVICIOS': 'servicios',
   'INQUILINOS': 'inquilinos',
-  'PRESUPUESTO': 'presupuesto'
+  'PRESUPUESTO': 'presupuesto',
+  'PRESUPUESTOS': 'presupuestos'
 };
 
-const token = '4ec81925d4b9352732489e14c04bfd2cdfd38b68';
+const token = '2900eafe5946c97ed24c2505a7889da74f16fb92';
 
 const HEADERS = new Headers({
   'Authorization': `token ${token}`

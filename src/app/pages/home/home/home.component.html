@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="isReady">
   <div class="row">
     <div class="col-xs-12">
       <md-page-header [data]="pageHeader"></md-page-header>
@@ -15,7 +15,7 @@
             </div>
             <div class="col-xs-12 col-sm-8 overview__breakdown">
               <p class="title">Presupuestos Creados</p>
-              <p class="amount">0</p>
+              <p class="amount">{{ presupuestos.length }}</p>
               <p class="type">Presupuesto</p>
               <a [routerLink]="['/presupuestos/add']">Agregar Presupuesto</a>
             </div>
@@ -28,7 +28,7 @@
             </div>
             <div class="col-xs-12 col-sm-8 overview__breakdown">
               <p class="title">Inquilinos Creados</p>
-              <p class="amount">0</p>
+              <p class="amount">{{ inquilinos.length }}</p>
               <p class="type">Inquilinos</p>
               <a [routerLink]="['/inquilinos/add']">Agregar Inquilinos</a>
             </div>
@@ -39,9 +39,19 @@
       <div class="row presupuestos">
         <div class="col-xs-12">
           <p class="presupuestos__title">Ultimos presupuestos agregados</p>
-          <div class="presupuestos__no-content text-center">
+          <div class="presupuestos__no-content text-center" *ngIf="!presupuestos.length">
             <p>No Tienes Ningun Presupuesto Agregado</p>
             <a [routerLink]="['/presupuestos/add']">Agregar tu primer presupuesto</a>
+          </div>
+
+          <div class="presupuestos__content text-center" *ngIf="presupuestos.length">
+            <ul>
+              <li *ngFor="let presupuesto of presupuestos">
+                <span class="col-xs-4">{{ presupuesto.month }}</span>
+                <span class="col-xs-4">{{ presupuesto.apartments }}</span>
+                <span class="col-xs-4">{{ presupuesto.budget | currency:'MXN':true }}</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

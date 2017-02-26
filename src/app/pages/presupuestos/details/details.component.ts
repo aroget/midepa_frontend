@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { PresupuesotsService } from '../presupuestos.service';
 
 @Component({
   selector: 'md-presupuestos-details',
@@ -6,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.component.scss']
 })
 export class PresupuestosDetailsComponent implements OnInit {
-  servicios;
+  presupuesto;
+  isReady = false;
+  presupuestoId: number;
 
-  constructor() {
-    this.servicios = require('./servicios.json');
+  constructor(
+    private route: ActivatedRoute,
+    private service: PresupuesotsService
+  ) {
+    this.presupuestoId = this.route.snapshot.params['presupuestoId'];
+
+    this
+      .service
+      .getPresupuestoById(this.presupuestoId)
+      .subscribe(
+        res => {
+          this.isReady = true;
+          this.presupuesto = res;
+        },
+        err => console.error(err.json)
+      );
   }
 
   ngOnInit() { }

@@ -12,7 +12,12 @@ export class PresupuesotsService extends BaseService {
   }
 
   getPresupuestos() {
-    const url = `${API.BASE_URL}/${API.END_POINTS.BASE}/${API.VERSION}/${API.RESOURCES.PRESUPUESTO}`;
+    const url = `${API.BASE_URL}/${API.END_POINTS.BASE}/${API.VERSION}/${API.RESOURCES.PRESUPUESTOS}`;
+    return super.get(url).map(res => res.json());
+  }
+
+  getPresupuestoById(id: number) {
+    const url = `${API.BASE_URL}/${API.END_POINTS.BASE}/${API.VERSION}/${API.RESOURCES.PRESUPUESTO}/${id}/`;
     return super.get(url).map(res => res.json());
   }
 
@@ -22,7 +27,7 @@ export class PresupuesotsService extends BaseService {
   }
 
   createPresupuesto(body: any) {
-    const url = `${API.BASE_URL}/${API.END_POINTS.BASE}/${API.VERSION}/${API.RESOURCES.PRESUPUESTO}`;
+    const url = `${API.BASE_URL}/${API.END_POINTS.BASE}/${API.VERSION}/${API.RESOURCES.PRESUPUESTOS}`;
 
     return super.post(url, body).map(res => res.json());
   }

@@ -9,11 +9,11 @@ import { MD_MONTHS } from '../../../shared/constants/months';
 import { PresupuesotsService } from '../presupuestos.service';
 
 @Component({
-  selector: 'md-presupuestos-add',
-  templateUrl: './add.component.html',
-  styleUrls: ['./add.component.scss']
+  selector: 'md-presupuestos-edit',
+  templateUrl: './edit.component.html',
+  styleUrls: ['./edit.component.scss']
 })
-export class PresupuestosAddComponent implements OnInit {
+export class PresupuestosEditComponent implements OnInit {
   form: FormGroup;
   currentMonth: string;
   months = MD_MONTHS;

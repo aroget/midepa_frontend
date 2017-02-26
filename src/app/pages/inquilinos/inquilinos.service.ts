@@ -14,12 +14,12 @@ export class InquilinosService extends BaseService {
   getInquilinos() {
       const url = `${API.BASE_URL}/${API.END_POINTS.BASE}/${API.VERSION}/${API.RESOURCES.INQUILINOS}`;
 
-      return super.get(url).map(res => res.json);
+      return super.get(url).map(res => res.json());
   }
 
-  createInqilino(body: any) {
-      const url = `${API.BASE_URL}/${API.END_POINTS.BASE}/${API.VERSION}/${API.RESOURCES.INQUILINOS}`;
+  createInqilinos(body: any) {
+      const url = `${API.BASE_URL}/${API.END_POINTS.BASE}/${API.VERSION}/${API.RESOURCES.REGISTER}`;
 
-      return super.post(url, body).map(res => res.json);
+      return super.post(url, body).map(res => res.json());
   }
 }
