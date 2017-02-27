@@ -1,8 +1,23 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { LoginComponent } from './pages/login/login.component';
+// import { AdminModule } from './pages/admin/admin.module';
+
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
-  // { path: 'about', component: AboutComponent}
+  { path: 'login', component: LoginComponent },
+
+  { path: '', loadChildren: './pages/admin/admin.module#AdminModule' }
+
 ];
 
-export const routing = RouterModule.forRoot(routes, { useHash: true });
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { useHash: true })
+  ],
+  exports: [
+    RouterModule
+  ]
+})
+export class AppRoutingModule {}
+

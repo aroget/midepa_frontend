@@ -1,0 +1,9 @@
+<md-sidebar
+  class="midepa-sidebar"
+  [class.isOpen]="(isOpen | async)?.isOpen">
+</md-sidebar>
+
+<div class="midepa-content">
+  <md-topbar class="midepa-topbar"></md-topbar>
+  <router-outlet></router-outlet>
+</div>

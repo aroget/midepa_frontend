@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import {
   MidepaStarsComponent,
@@ -13,7 +13,7 @@ import {
 } from './components';
 
 @NgModule({
-  imports: [ RouterModule, BrowserModule ],
+  imports: [ RouterModule, CommonModule ],
   declarations: [ MidepaSidebarComponent, MidepaTopBarComponent,
   MidepaAvatarComponent, MidepaPageHeaderComponent, MidepaStarsComponent,
   MidepaDropdownComponent, MidepaBreadCrumbComponent ],

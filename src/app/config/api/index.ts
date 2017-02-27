@@ -19,7 +19,7 @@ const RESOURCES = {
   'PRESUPUESTOS': 'presupuestos'
 };
 
-const token = '2900eafe5946c97ed24c2505a7889da74f16fb92';
+const token = 'b53ca7179410c882a836407ef4a34112e03983d3';
 
 const HEADERS = new Headers({
   'Authorization': `token ${token}`

@@ -1,0 +1,145 @@
+@import '../../../../../style/core/_colors';
+@import '../../../../../style/core/_typography';
+@import '../../../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+
+:host {
+  height: 100%;
+  display: block;
+}
+$boder_color: #d8dde0;
+
+.overview {
+  height: 100%;
+
+  &:after {
+    top: 0;
+    right: 0;
+    width: 1px;
+    content: '';
+    height: 120%;
+    position: absolute;
+    background: $boder_color;
+
+    @media all and (max-width: $screen-md) {
+      content: none;
+    }
+  }
+
+  &__presupuesto {
+    &:after {
+      top: 0;
+      right: 0;
+      width: 1px;
+      content: '';
+      height: 80px;
+      position: absolute;
+      background: $boder_color;
+
+      @media all and (max-width: $screen-md) {
+        content: none;
+      }
+    }
+  }
+
+  &__inquilino > *,
+  &__presupuesto > *,
+  .overview__logo > *,
+  .overview__breakdown > *, {
+    @media all and (max-width: $screen-md) {
+      margin: 10px auto;
+      text-align: center;
+    }
+  }
+
+  &__inquilino,
+  &__presupuesto {
+    .type,
+    .title,
+    .amount {
+      margin-bottom: 5px;
+    }
+
+    .title {
+      @include font-thin();
+
+      font-size: 0.8em;
+    }
+
+    .amount {
+      font-size: 2em;
+      color: $color-brand;
+    }
+
+    .type {
+      @include font-bold();
+
+      font-size: 0.8em;
+      text-transform: uppercase;
+    }
+
+    a {
+      display: block;
+      max-width: 160px;
+      margin-top: 15px;
+      font-size: 0.75em;
+      padding: 12px 18px;
+      text-align: center;
+      border-radius: 18px;
+      color: $color-white;
+      margin-bottom: 40px;
+      background: $color-brand;
+    }
+  }
+
+  .presupuestos {
+
+    @media all and (max-width: $screen-md) {
+     padding-bottom: 60px;
+    }
+
+    &__title {
+      @include font-bold();
+
+      margin-top: 20px;
+      padding-top: 30px;
+      border-top: 1px solid #d8dde0;
+    }
+
+    &__no-content {
+      font-size: 0.9em;
+      margin-top: 90px;
+      p,
+      a {
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+
+      a {
+        padding-bottom: 2px;
+        border-bottom: 1px solid;
+      }
+    }
+  }
+}
+
+.calificacion {
+  &__title {
+    @include font-bold();
+  }
+
+  &__no-content {
+    font-size: 0.9em;
+    margin-top: 90px;
+    p,
+    a {
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    a {
+      padding-bottom: 2px;
+      border-bottom: 1px solid;
+    }
+  }
+}
+

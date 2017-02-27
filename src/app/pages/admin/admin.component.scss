@@ -1,0 +1,31 @@
+@import '../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+
+$sidebar-width: 280px;
+
+.midepa-sidebar {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  position: fixed;
+  width: $sidebar-width;
+  transition: transform 150ms ease-in-out;
+
+  &.isOpen {
+    transform: translateX(0%);
+  }
+
+  @media (max-width: $screen-md) {
+    top: 80px;
+    transform: translateX(-100%);
+  }
+}
+
+.midepa-content {
+  padding-bottom: 15px;
+  margin-left: $sidebar-width;
+
+   @media (max-width: $screen-md) {
+    margin-left: 0;
+  }
+}
