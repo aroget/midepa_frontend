@@ -11,7 +11,6 @@ import { InquilinosRoutesModule } from './inquilinos.routing.module';
 @NgModule({
   declarations: [ InquilinosListComponent, InquilinosAddComponent ],
   imports: [ CommonModule, InquilinosRoutesModule, ReactiveFormsModule ],
-  providers: [ InquilinosService ],
-  bootstrap: [ InquilinosListComponent ]
+  providers: [ InquilinosService ]
 })
 export class InquilinosModule {}

@@ -6,23 +6,20 @@ import { StoreModule } from '@ngrx/store';
 
 import { mobileReducer } from './config/reducers';
 
+
+import { AuthGuard, ProfileGuard } from './config/guards';
+
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
-// import { AdminComponent } from './pages/admin/admin.component';
-
-// import { HomeModule } from './pages/admin/home/home.module';
-import { SharedModule } from './shared/shared.module';
-
-// import { InquilinosModule } from './pages/admin/inquilinos/inquilinos.module';
-// import { PresupuestosModule } from './pages/admin/presupuestos/presupuestos.module';
-
 import { AppRoutingModule } from './app.routing';
+import { AuthModule } from './pages/auth/auth.module';
+import { SharedModule } from './shared/shared.module';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
 @NgModule({
   imports: [
     BrowserModule,
+    AuthModule,
     HttpModule,
     SharedModule,
     ReactiveFormsModule,
@@ -31,9 +28,8 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
   ],
   declarations: [
     AppComponent,
-    LoginComponent,
   ],
-  providers: [ ],
+  providers: [ AuthGuard, ProfileGuard ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {

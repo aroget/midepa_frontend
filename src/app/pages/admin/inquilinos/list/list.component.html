@@ -39,11 +39,11 @@
                       <span>Email</span>
                     </div>
                     <div class="col-xs-12 col-sm-2 truncate">
-                      <span>Telfono</span>
+                      <span>Telefono</span>
                     </div>
-                    <div class="col-xs-12 col-sm-2 truncate">
+                    <!--<div class="col-xs-12 col-sm-2 truncate">
                       <span>Ver mas detalles</span>
-                    </div>
+                    </div>-->
                   </div>
                 </div>
               </div>
@@ -58,7 +58,7 @@
                         <span class="hidden-lg">Nombre Completo:</span>
                       </div>
                       <div class="col-xs-12 col-lg-offset-0 col-lg-12">
-                        <p>{{ inquilino.name }}</p>
+                        <p>{{ inquilino.first_name }} {{ inquilino.last_name }}</p>
                       </div>
                     </div>
                   </div>
@@ -68,7 +68,7 @@
                         <span class="hidden-lg">Numero de Condominio:</span>
                       </div>
                       <div class="col-xs-12 col-lg-offset-0 col-lg-12">
-                        <p>{{ inquilino.apt }}</p>
+                        <p>{{ inquilino.apartment_number ? inquilino.apartment_number : '---' }}</p>
                       </div>
                     </div>
                   </div>
@@ -88,20 +88,20 @@
                         <span class="hidden-lg">Telefonoe:</span>
                       </div>
                       <div class="col-xs-12 col-lg-offset-0 col-lg-12">
-                        <p>{{ inquilino.phone }}</p>
+                        <p>{{ inquilino.phone ? inquilino.phone : '---' }}</p>
                       </div>
                     </div>
                   </div>
-                  <div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
+                  <!--<div class="col-xs-10 col-xs-offset-1 col-lg-offset-0 col-lg-2">
                     <div class="row">
                       <div class="col-xs-12">
-                        <span class="hidden-lg">Telefonoe:</span>
+                        <span class="hidden-lg">Acciones:</span>
                       </div>
                       <div class="col-xs-12 col-lg-offset-0 col-lg-12">
                         <a [routerLink]="[inquilino.id]">Ver mas detalles</a>
                       </div>
                     </div>
-                  </div>
+                  </div>-->
                 </div>
               </li>
             </ul>

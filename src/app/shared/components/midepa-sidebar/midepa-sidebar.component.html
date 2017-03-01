@@ -12,7 +12,7 @@
         Presupuestos
       </a>
     </li>
-    <li (click)="toggelMenu()">
+    <li (click)="toggelMenu()" *ngIf="user.is_admin">
       <a [routerLink]="['/inquilinos']">
         <span class="icon"><img class="img-responsive" src="logos/inquilinos-white.svg"></span>
         Inquilinos

@@ -4,13 +4,13 @@
       <div class="col-xs-12 col-md-6">
         <div class="row">
           <p class="col-xs-12 md-header__title">
-            Bienvenido <span>{{ data.name }}</span>
+            Bienvenido <span>{{ user.first_name }} {{ user.last_name }}</span>
           </p>
         </div>
 
         <div class="row">
           <div class="md-header__rating col-xs-12">
-            <md-stars [rating]="data.rating"></md-stars>
+            <md-stars [rating]="user.rating"></md-stars>
           </div>
         </div>
       </div>

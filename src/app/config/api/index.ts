@@ -1,28 +1,29 @@
 import { Headers } from '@angular/http';
+import { appStorage } from '../../shared/utils/localStorage';
 
 const BASE_URL = 'https://midepa-backend.herokuapp.com';
 
 const END_POINTS = {
   'BASE': 'midepa/api',
-  'AUTH': 'auth'
+  'AUTH': 'midepa'
 };
 
 const VERSION = 'v1';
 
 const RESOURCES = {
   'PROFILE': 'me',
-  'REGISTER': 'register',
+  'LOGIN': 'auth',
   'SERVICIO': 'servicio',
+  'REGISTER': 'register',
   'SERVICIOS': 'servicios',
   'INQUILINOS': 'inquilinos',
   'PRESUPUESTO': 'presupuesto',
   'PRESUPUESTOS': 'presupuestos'
 };
 
-const token = 'b53ca7179410c882a836407ef4a34112e03983d3';
 
 const HEADERS = new Headers({
-  'Authorization': `token ${token}`
+  'Authorization': `token ${appStorage.get(appStorage.keys.SESSION)}`
 });
 
 export const API = {

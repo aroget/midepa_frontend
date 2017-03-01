@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="formIsReady">
   <form [formGroup]="form">
     <div class="form-group">
       <div class="row">
@@ -8,7 +8,12 @@
               <label class="truncate">Selecciona el mes</label>
               <select formControlName="month">
                 <option value="">---</option>
-                <option [value]="month.label" *ngFor="let month of months">{{ month.label }}</option>
+                <option
+                  [value]="month.label"
+                  *ngFor="let month of months"
+                  [attr.selected]="form.controls['month'].value">
+                  {{ month.label }}
+                </option>
               </select>
             </div>
             <div class="col-xs-12 col-sm-4">

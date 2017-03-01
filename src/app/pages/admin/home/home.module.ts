@@ -12,6 +12,5 @@ import { PresupuesotsService } from '../presupuestos/presupuestos.service';
   declarations: [ HomeComponent ],
   imports: [ CommonModule, SharedModule, HomeRoutesModule ],
   providers: [ InquilinosService, PresupuesotsService ],
-  bootstrap: [  ]
 })
 export class HomeModule {}

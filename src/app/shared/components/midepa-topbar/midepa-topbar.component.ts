@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { TOGGLE } from '../../../config/reducers';
 import { IAvatar, AVATAR_SIZE } from '../midepa-avatar';
+import { appStorage } from '../../../shared/utils';
 
 @Component({
   selector: 'md-topbar',
@@ -13,9 +14,11 @@ import { IAvatar, AVATAR_SIZE } from '../midepa-avatar';
 export class MidepaTopBarComponent implements OnInit {
   avatar: IAvatar;
   isOpen: Observable<any>;
+  user;
 
   constructor(private store: Store<any>) {
     this.isOpen = store.select('mobileReducer');
+    this.user = JSON.parse(appStorage.get(appStorage.keys.PROFILE));
 
     this.avatar = {
       type: AVATAR_SIZE.DEFAULT,

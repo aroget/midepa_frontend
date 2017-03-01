@@ -17,6 +17,5 @@ import { PresupuestosDetailsComponent } from './details';
   PresupuestosEditComponent ],
   imports: [ CommonModule, SharedModule, PresupuestosRoutesModule, ReactiveFormsModule ],
   providers: [ PresupuesotsService ],
-  bootstrap: [  ]
 })
 export class PresupuestosModule {}

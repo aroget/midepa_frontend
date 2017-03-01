@@ -12,12 +12,16 @@ import {
   MidepaPageHeaderComponent,
 } from './components';
 
+import { ProfileService } from './services';
+
 @NgModule({
   imports: [ RouterModule, CommonModule ],
   declarations: [ MidepaSidebarComponent, MidepaTopBarComponent,
   MidepaAvatarComponent, MidepaPageHeaderComponent, MidepaStarsComponent,
   MidepaDropdownComponent, MidepaBreadCrumbComponent ],
-  providers: [],
+
+  providers: [ ProfileService ],
+
   exports: [ MidepaSidebarComponent, MidepaTopBarComponent, MidepaAvatarComponent,
   MidepaPageHeaderComponent, MidepaStarsComponent, MidepaDropdownComponent, MidepaBreadCrumbComponent ]
 })

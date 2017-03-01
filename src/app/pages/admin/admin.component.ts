@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import '../../../style/app.scss';
 require('jquery');
 require('../../../../node_modules/bootstrap-sass/assets/javascripts/bootstrap.min');
 

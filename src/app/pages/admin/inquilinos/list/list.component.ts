@@ -19,7 +19,7 @@ export class InquilinosListComponent implements OnInit {
       rating: 4
     };
 
-    this.service.getInquilinos().subscribe(res => console.log(res));
+    this.service.getInquilinos().subscribe(res => this.inquilinos = res);
   }
 
   ngOnInit() { }

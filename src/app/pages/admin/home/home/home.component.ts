@@ -30,11 +30,9 @@ export class HomeComponent implements OnInit {
         this.inquilinos = res[0];
         this.presupuestos = res[1];
         this.isReady = true;
-        console.log(res);
       },
       err => console.error(err.json())
     );
-
   }
 
   ngOnInit() {
