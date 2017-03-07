@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-import { API } from '../api';
+// import { API } from '../api';
 import { appStorage } from '../../shared/utils/localStorage';
 
 @Injectable()
@@ -15,14 +15,15 @@ export class BaseService {
   ) { }
 
   get(url: string) {
-    const headers = API.HEADERS;
+    let headers = new Headers();
+    headers.append('Authorization', `token ${appStorage.get(appStorage.keys.SESSION)}`);
 
     return this.http.get(url, { headers }).catch(error => this.catchError(error));
   }
 
   post(url: string, body: any) {
-    const headers = API.HEADERS;
-
+    let headers = new Headers();
+    headers.append('Authorization', `token ${appStorage.get(appStorage.keys.SESSION)}`);
     return this.http.post(url, body, { headers }).catch(error => this.catchError(error));
   }
 

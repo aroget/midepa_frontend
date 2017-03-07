@@ -32,6 +32,6 @@ export class ProfileGuard implements CanActivate {
   }
 
   canActivate() {
-    return this.getProfile();
+    return true;
   }
 }

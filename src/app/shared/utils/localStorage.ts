@@ -16,16 +16,8 @@ const storageAvailable = function storageAvailable() {
   }
 };
 
-const set = function set(key: string, value: string): Promise<any> {
-  let promise = new Promise(res => {
-    localStorage.setItem(base64.encode(key), base64.encode(value));
-    res();
-  });
-
-  return promise;
-
-  // promise.then(() => true);
-  // localStorage.setItem(base64.encode(key), base64.encode(value));
+const set = function set(key: string, value: string): void {
+  localStorage.setItem(base64.encode(key), base64.encode(value));
 };
 
 const get = function get(key: string) {

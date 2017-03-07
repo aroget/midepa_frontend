@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { appStorage } from '../../../shared/utils';
+import { appStorage } from '../../../shared/utils/localStorage';
 
 export interface IPageHeader {
   name: string;

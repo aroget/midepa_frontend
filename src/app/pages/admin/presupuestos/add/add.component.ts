@@ -28,7 +28,7 @@ export class PresupuestosAddComponent implements OnInit {
       'apartments': ['', Validators.required],
       'month': ['', Validators.required],
       'budget': ['', Validators.required],
-      'condominio': [3, Validators.required],
+      'condominio': [1, Validators.required],
       'servicios': this.fb.array([
         this.createServiceControl()
       ])
@@ -40,7 +40,7 @@ export class PresupuestosAddComponent implements OnInit {
       'name': ['', Validators.required],
       'price': ['', Validators.required],
       'company_name': ['', Validators.required],
-      'condominio': [3, Validators.required],
+      'condominio': [1, Validators.required],
       'description': ['', Validators.required],
     });
   }

@@ -6,11 +6,13 @@ import { PresupuestosListComponent } from './list';
 import { PresupuestosEditComponent } from './edit';
 import { PresupuestosDetailsComponent } from './details';
 
+import { AuthGuard } from '../../../config/guards';
+
 const homeRoutes: Routes = [
-  { path: '', component: PresupuestosListComponent },
-  { path: 'add', component: PresupuestosAddComponent },
-  { path: ':presupuestoId', component: PresupuestosDetailsComponent },
-  { path: ':presupuestoId/edit', component: PresupuestosEditComponent }
+  { path: '', component: PresupuestosListComponent, canActivate: [ AuthGuard ] },
+  { path: 'add', component: PresupuestosAddComponent, canActivate: [ AuthGuard ] },
+  { path: ':presupuestoId', component: PresupuestosDetailsComponent, canActivate: [ AuthGuard ] },
+  { path: ':presupuestoId/edit', component: PresupuestosEditComponent, canActivate: [ AuthGuard ]}
 ];
 @NgModule({
   imports: [

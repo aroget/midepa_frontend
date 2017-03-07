@@ -1,7 +1,8 @@
 import { Headers } from '@angular/http';
 import { appStorage } from '../../shared/utils/localStorage';
 
-const BASE_URL = 'https://midepa-backend.herokuapp.com';
+// const BASE_URL = 'https://midepa-backend.herokuapp.com';
+const BASE_URL = 'http://localhost:8000';
 
 const END_POINTS = {
   'BASE': 'midepa/api',
