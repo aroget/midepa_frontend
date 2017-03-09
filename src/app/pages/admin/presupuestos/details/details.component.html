@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div class="col-xs-12 col-sm-4 margin-top">
+  <div class="col-xs-12 col-sm-4 margin-top" *ngIf="user.is_admin">
     <a [routerLink]="['edit']" class="mdbtn mdbtn--primary pull-right">Modificar Presupuesto</a>
   </div>
 

@@ -43,7 +43,11 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res => {
           appStorage.set(appStorage.keys.PROFILE, JSON.stringify(res));
-          this.router.navigate(['/dashboard']);
+          if (res.is_admin) {
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.router.navigate(['/presupuestos']);
+          }
         },
         err => console.error(err)
       );

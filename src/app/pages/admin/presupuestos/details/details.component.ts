@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { appStorage } from '../../../../shared/utils';
 import { PresupuesotsService } from '../presupuestos.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { PresupuesotsService } from '../presupuestos.service';
   styleUrls: ['./details.component.scss']
 })
 export class PresupuestosDetailsComponent implements OnInit {
+  user;
   presupuesto;
   isReady = false;
   presupuestoId: number;
@@ -17,6 +19,7 @@ export class PresupuestosDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private service: PresupuesotsService
   ) {
+    this.user = appStorage.get(appStorage.keys.PROFILE);
     this.presupuestoId = this.route.snapshot.params['presupuestoId'];
 
     this

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="content">
-    <div class="col-xs-12">
+    <div class="col-xs-12" *ngIf="user.is_admin">
       <div class="row">
         <div class="col-xs-12">
           <a class="add pull-right" [routerLink]="['add']">Agregar Presupuesto</a>

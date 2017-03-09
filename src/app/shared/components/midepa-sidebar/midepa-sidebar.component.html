@@ -1,6 +1,10 @@
 <div class="sidebar">
   <div class="sidebar__logo text-center">
-    <a [routerLink]="['/']" (click)="toggelMenu()">
+    <a [routerLink]="['/']" (click)="toggelMenu()" *ngIf="user.is_admin">
+      <img src="/logos/logo-white.svg" alt="Midepa App">
+    </a>
+
+    <a [routerLink]="['/presupuestos']" (click)="toggelMenu()" *ngIf="!user.is_admin">
       <img src="/logos/logo-white.svg" alt="Midepa App">
     </a>
   </div>
